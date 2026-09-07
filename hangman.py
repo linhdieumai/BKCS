@@ -5,14 +5,17 @@ def choose_topic(file_animal, file_jobs, file_things):
     while True:
         topic = input('Choose a topic (animal, jobs, things) (a/j/t): \n').lower()
         if topic == 'a':
+            file_animal.seek(0)  # Đưa con trỏ về đầu file
             words = file_animal.read().splitlines()
             print("You have chosen the topic: Animal")
             return words
         elif topic == 'j':
+            file_jobs.seek(0)    # Đưa con trỏ về đầu file
             words = file_jobs.read().splitlines()
             print("You have chosen the topic: Jobs")
             return words
         elif topic == 't':
+            file_things.seek(0)  # Đưa con trỏ về đầu file
             words = file_things.read().splitlines()
             print("You have chosen the topic: Things")
             return words
